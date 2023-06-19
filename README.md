@@ -1,5 +1,5 @@
 # detSimMetuDBL_MATLAB
-Some detector simulation (Timepix, Diamond Detector...) and analysis code for proton beam uniformity in METU-DBL Radiation Test Facility
+Detector simulation (Timepix, Diamond Detector...) and analysis code for proton beam uniformity in METU-DBL Radiation Test Facility
 
 This is series of MATLAB codes that simulates response of two detectors to very high proton
 fluxes. Then it analyzes the responses and figure out whether detectors can measure the
@@ -41,7 +41,6 @@ beforehand, and make sure analysis can measure the flux correctly.
 
 timepix_analysis: Code for simulating response of the Timepix detector, and analysis code for
 the flux measurement. The purpose of the simulation is to create the expected signal beforehand, and make sure analysis can measure the flux correctly.
-
 
 For more details on physics, purpose, algorithms and implementation read (in order):
 timepix_forfinal.pdf
