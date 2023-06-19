@@ -1,0 +1,29 @@
+%% License and Information
+% Author: Baran Bodur
+% Timepix3 Different Flux Simulator:
+% Using the clustering, ToA, adn ToT statistics from a given Tpx3
+% measurement, generate a frame based pixel data for a different flux
+% of the same particle with same energy deposition with same Tpx3
+% acquisition parameters (mainly threshold and Ikrum)
+% shutter length, number of frames, and flux could be different of course
+
+%% Parameters
+% Detector Parameters
+intr_row_size = 256;
+intr_column_size = 256;
+pixel_area = 0.0055*0.0055; % in cm2
+clock_to_ns = 25; % length of a clock cycle in ns
+
+% Multi Frame Options (for combining frames, automatically done with .pmf)
+no_of_frames = 250;
+row_size = intr_row_size * no_of_frames;
+column_size = intr_column_size;
+
+%ToA Format and Acquisiton Time used in Timepix3
+ToA_format = 1; % 0 for clock cycle, 1 for ns
+shutter_length = 400*10^3; % in ns or clock cycle(25 MHz) depending on ToA format
+
+%% Obtain clustering, ToA and ToT statistics
+stat_filename = '../statistics_data/alpha_all.txt';
+stat_matrix = dlmread(stat_filename,',');
+stat_matrix

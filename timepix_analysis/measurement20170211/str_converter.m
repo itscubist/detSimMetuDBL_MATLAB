@@ -1,0 +1,10 @@
+meas_sec = 1;
+hit = 62;
+meas_dist = 8; % in mm
+error_hit_per_sec = sqrt(hit)/meas_sec;
+hit_per_sec = hit/meas_sec;
+detector_rad = 1.5; % 7.955 mm Tpx3 - 1.5 mm diamond
+theta_covered = atan(detector_rad/meas_dist);
+str_covered = 2*pi*abs(1-cos(theta_covered))
+str_norm_flux = hit_per_sec/str_covered
+error_flux = sqrt(hit)/meas_sec/str_covered
